@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+        form{
+            width: 200px;
+            border: 1px solid;
+            box-shadow: 0px 0px 10px 5px white;
+            padding: 10px 50px 50px 50px;
+            text-align: center;
+            margin: 100px 0px 0px 500px;
+            
+        }
+        input{
+            font-size: 15px;
+            text-align: center;
+
+        }
+        label{
+            font-size: 20px;
+         }
+         #button{
+            font-size: 15px;
+           
+         }
+    </style>
+</head>
+<body>
+
+    
+
+    <form id="Lform">
+        <h1>Login</h1>
+    
+    <label>Username : </label>
+    <input type="text" placeholder="username" id="uname" required><br><br>
+    <label>Password : </label>
+    <input type="password" placeholder="password" id="logpass" required><br><br>
+<!-- <a href="./signUp.html"> -->
+    <button type="button" onclick="logindata()" id="button">login</button>
+<!-- </a> -->
+    </form>
+    </body>
+</html>
+<script>
+    
+    function logindata(){
+        const parse = JSON.parse(localStorage.getItem("savedata"))
+    
+        let uname = document.getElementById('uname').value
+    
+        let logpass = document.getElementById('logpass').value
+    
+        if(parse.Name!=uname || parse.Pass!=logpass)
+        {
+            alert("Incorrect Username and Password")
+    
+        }
+        else
+        {
+            alert("Login Successfully")
+            document.querySelector('#Lform').reset()
+    }
+    
+    
+    }
+    
+</script>

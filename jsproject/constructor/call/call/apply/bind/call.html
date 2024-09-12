@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    const object1={
+        
+        Address:'pithampur',
+        Contact:987654321,
+        Rollno:321,
+        Hobbies:['dancing','painting'],
+        Details : function(Name,Age){
+            return Name+"    "+Age
+        }
+    }
+console.log(object1.Details('Minakshi','20'))
+
+
+const object2={
+        
+    Address:'pithampur',
+    Contact:987654321,
+    Rollno:321,
+    Hobbies:['dancing','painting'],
+}
+console.log(object1.Details.call(object2,'Isha','19'))
+
+
+
+const object3={
+        
+    Address:'pithampur',
+    Contact:987654321,
+    Rollno:321,
+    Hobbies:['dancing','painting'],
+}
+console.log(object1.Details.apply(object2,['Darpan','19']))
+
+   //console.log(object1.Details('India','Indore'))
+   //console.log(object1.foodDetails('apple','100','red'))
+   //console.log(object1.foodDetails('apple','100','red'))
+
+  /* const object2={
+        Name:'Darpan',
+        Age:19,
+        Address:'Getabhawan',
+        Contact:987654321,
+        Rollno:123,
+        Hobbies:['coding','gaming']
+   }
+
+console.log(object1.Details.apply(object2,['India','Pithampur']))
+
+
+const object3={
+    Name:'Isha',
+    Age:19,
+    Address:'lig',
+    Contact:987654321,
+    Rollno:123,
+    Hobbies:['coding','dancing']
+}
+
+const object4={
+    Name:'Naman',
+    Age:17,
+    Address:'indore',
+    Contact:987654321,
+    Rollno:123,
+    Hobbies:['coding','gaming']
+}
+
+const object5={
+    Name:'shubham',
+    Age:23,
+    Address:'Getabhawan',
+    Contact:987654321,
+    Rollno:123,
+    Hobbies:['coding','gaming']
+}*/
+</script>

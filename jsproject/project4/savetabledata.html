@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            margin-left: 500px;
+            border: 1px solid;
+            width: 200px;
+            height: auto;
+            padding: 50px;
+            text-align: center;
+            border-radius: 15px;
+        text-shadow: 5px 5px 10px blue;
+            box-shadow: -5px -5px 10px red;
+        }
+        h1{
+            margin-left: 550px;
+            text-shadow: 5px 5px 10px rgb(162, 46, 117);
+
+        }
+        td{
+            width:100px
+        }
+        label{
+            font-size: 20px;
+            margin-top: 5px;
+            
+        }
+        input{
+            font-size: 15px;
+            border-radius: 5px;
+        }
+        button:hover{
+            background-color: black;
+            color: white;
+        }
+        th{
+            width: 300px;
+        }
+       
+    </style>
+</head>
+<body>
+    <h1>Student Details</h1>
+    <form>
+        <label>Name : </label>
+        <input type="text" placeholder="Enter Name" id="name"><br><br>
+        <label>Email : </label>
+        <input type="text" placeholder="Enter Email" id="email"><br><br>
+        <label>Address : </label>
+        <input type="text" placeholder="Enter Address" id="address"><br><br>
+        <label>contact : </label>
+        <input type="number" placeholder="Enter number" id="contact"><br><br>
+        <label>Enrollment Number : </label>
+        <input type="number" placeholder="Enter Enroll.num" id="roll"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+
+
+    <h1>stored data</h1>
+    <table>
+        <thead>
+            <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Contact</th>
+            <th>Enrollment</th>
+        </tr>
+        </thead>
+
+        <tbody></tbody>
+    </table>
+    
+</body>
+</html>
+<script>
+    var myform = document.querySelector('form')
+    //console.log(myform)
+
+    myform.addEventListener('submit',saveform)
+
+    function saveform(event){
+      event.preventDefault()
+      let name = document.getElementById('name').value
+      let email = document.getElementById('email').value
+      let address = document.getElementById('address').value
+      let contact = document.getElementById('contact').value
+      let roll = document.getElementById('roll').value
+
+      var object = {
+        Name:name,
+        Email:email,
+        Address:address,
+        Contact:contact,
+        Roll:roll
+      }
+     // console.log(object)
+     localStorage.setItem('formdata',JSON.stringify(object))
+    
+     //const parse = localStorage.getItem('formdata',stringobject)
+     
+     displayData();
+    }
+
+    function displayData() {
+        var storedData = JSON.parse(localStorage.getItem('formdata'));
+        if (storedData) {
+            var tableBody = document.querySelector('tbody');
+            tableBody.innerHTML = '<tr>' +
+                                  '<th>' + storedData.Name + '</th>' +
+                                  '<th>' + storedData.Email + '</th>' +
+                                  '<th>' + storedData.Address + '</th>' +
+                                  '<th>' + storedData.Contact + '</th>' +
+                                  '<th>' + storedData.Roll + '</th>' +
+                                  '</tr>';
+        }
+    }
+    displayData();
+
+
+
+
+
+
+
+
+
+    
+    /*function display(){
+        let savedata = JSON.parse(localStorage.getItem('formdata'))
+
+        const tablebody=document.querySelector('tbody')
+        table.innerText=""
+
+        if(savedata.length>0){
+        savedata.forEach(function(data){
+        let row = document.createElement('tr')
+
+        let colname = document.createElement('td')
+        colname.innerHTML=data.Name
+
+        let colemail = document.createElement('td')
+        colemail.innerHTML=data.Email
+
+        let coladdress = document.createElement('td')
+        coladdress.innerHTML=data.Address
+
+        let colcontact = document.createElement('td')
+        colcontact.innerHTML=data.Contact
+
+        let colroll = document.createElement('td')
+        colroll.innerHTML=data.Roll
+
+    row.append(colname,colemail,coladdress,colcontact,colroll)
+    document.querySelector('tbody').append(row)
+
+});}
+        }*/
+
+
+  
+</script>

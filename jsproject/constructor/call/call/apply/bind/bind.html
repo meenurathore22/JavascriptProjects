@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    const person1={
+        name:'minakshi',
+        age:20,
+        addrsee:'pithampur',
+        fruits:function(fruitname,color){
+return  this.name+"  "+this.name+"  "+this.name+"  "+fruitname+"   "+color
+        }
+    }
+
+
+
+
+    const Second={
+        name:'isha',
+        age:19,
+        addrsee:'indore'
+        }
+
+        const details = person1.fruits.bind(Second,'appple','red')
+        console.log(details())
+</script>

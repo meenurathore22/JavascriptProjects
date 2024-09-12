@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+        form{
+            width: 200px;
+            border: 1px solid;
+            box-shadow: 0px 0px 10px 5px white;
+            padding: 10px 50px 50px 50px;
+            text-align: center;
+            margin: 100px 0px 0px 500px;
+            
+        }
+        input{
+            font-size: 15px;
+            text-align: center;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+
+        }
+        label{
+            font-size: 20px;
+         }
+         #button{
+            font-size: 15px;
+            background-color: black;
+            color: white;
+
+           
+         }
+    </style>
+</head>
+<body>
+
+    <form id="Sform">
+        <h1>Sign Up</h1>
+        <label>Username :</label>
+        <input type="text" placeholder="Username" id="name" required><br><br>
+        <label>Password :</label>
+        <input type="password" placeholder="password" id="pass" required><br><br>
+        <label>Confirm password :</label>
+        <input type="password" placeholder="confirm password" id="c-pass" required><br><br>
+        <a href="./login.html">
+        <button type="button" onclick="signupForm()" id="button">submit</button>
+    </a>
+</form>
+</body>
+</html>
+<script>
+    /*const myform = document.querySelector('form') 
+    console.log(myform)
+myform.addEventListener('submit',function(){*/
+function signupForm(){
+    let name=document.getElementById('name').value
+    let pass=document.getElementById('pass').value
+    let password=document.getElementById('c-pass').value
+
+    const object={
+        Name : name,
+        Pass : pass,
+        Password : password
+    }
+    //console.log(object)
+     localStorage.setItem("savedata",JSON.stringify(object))
+     //const parse =localStorage.getItem("savedata")
+     //const parseobject = JSON.parse(parse)
+     //console.log(parseobject)
+     //localStorage.clear()
+
+
+     if(pass!==password){
+      alert("password is not matching")
+}
+else{
+
+    alert("Sign Up SuccessFull")
+    document.querySelector('#Sform').reset()
+}
+
+}
+
+</script>

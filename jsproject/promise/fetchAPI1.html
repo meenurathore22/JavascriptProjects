@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+        #main{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 1500px;
+            height: 1800px;
+            
+            
+        }
+        .small{
+            width: 350px;
+            height: 370px;
+            border: 1px solid;
+            text-align: center;
+            margin: 5px;
+            box-shadow: 0px 0px 3px 3px rgb(20, 20, 20);
+            border-radius: 20px;
+
+
+
+        }
+        
+        h1{
+            text-align: center;
+            font-size: 50px;
+            font-family:cursive;
+            text-shadow: 5px 2px black;
+        }
+        .buttonn{
+            font-size: large;
+           margin-left: 720px;
+           margin-bottom: 50px; 
+        }
+        .buttonn:hover{
+            box-shadow: 0px 0px 3px 5px red ;
+            border-radius: 20px;
+        }
+    </style>
+
+</head>
+<body>
+   <h1>Fetch</h1> 
+   <button onclick="getData()" class="buttonn">Fetching</button>
+   <div id="main"></div>
+</body>
+</html>
+
+<script>
+    async function getData(){
+        let resolve = await fetch('https://fakestoreapi.com/products')
+        //console.log(resolve)
+
+        let data = await resolve.json()
+        console.log(data)
+
+        //call
+        appendData(data)
+    }
+
+    function appendData(data){
+let maindiv= document.getElementById('main')
+maindiv.innerHTML=" ";
+data.forEach((e)=>{
+    let smalldiv  = document.createElement('div')
+    smalldiv.setAttribute('class','small')
+    
+
+
+
+    let title = document.createElement('p')
+    title.innerText=`TITLE : ${e.title}`
+
+    let id = document.createElement('p')
+    id.innerText=`ID : ${e.id}`
+
+    let price = document.createElement('p')
+    price.innerText=`PRICE : ${e.price}`
+
+    let rating = document.createElement('p')
+    rating.innerText = `RATE : ${e.rating.rate}  COUNT : ${e.rating.count} `
+
+    let image = document.createElement('img')
+    image.style.width='170px'
+    image.style.height='170px'
+   
+    image.src=e.image
+
+    let button=document.createElement('button')
+    button.innerText='Shop Now'
+    
+
+    smalldiv.append(title,id,price,rating,image,button)
+    maindiv.appendChild(smalldiv)
+
+})
+
+    }
+</script>

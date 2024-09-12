@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    
+    localStorage.setItem('Firstname','Minakshi')
+    localStorage.setItem('Lastname','Rathore')
+    localStorage.setItem('Address','Pithampur')
+
+    const age=20
+    localStorage.setItem('age',age)
+
+    localStorage.removeItem('Address')
+    //localStorage.clear()
+
+    const data=localStorage.getItem('Firstname')
+    console.log(data)
+
+
+
+
+
+
+
+    //To save our array or object in localstorage we use JSON.stringfy method
+
+    const array = [1,2,3,4,5,6]
+    localStorage.setItem('arr',array)
+    //use directly localstorage our data not save properly 
+    //Now we use JSON.stringfy method
+
+    const arr=[1,2,3,4,5,6,7]
+    const arrdata=JSON.stringify(arr)
+    localStorage.setItem('arrdata',arrdata)
+
+    //const object1={
+       // name:'minakshi',
+        //age:20
+    //}
+    //localStorage.setItem('object1',object1) 
+
+    const object={
+        name:'minakshi',
+        age:20
+    }
+     localStorage.setItem('object',JSON.stringify(object))
+     
+
+
+
+
+
+
+
+    const person1 = {
+        name:'shivam',
+        Address:'Indore'
+    }
+    const persondata=JSON.stringify(person1)
+    localStorage.setItem('data',persondata)
+
+    //Json.parse() method which is used to convert our JSON.stringhfy method into normal javascript.
+    const persondata1=JSON.parse(persondata)
+    console.log(persondata1)
+
+
+
+
+    const student={
+        name:'gotam',
+        age:19
+    }
+    const s1=JSON.stringify(student)
+    localStorage.setItem('sdata',s1)
+
+    const s2=JSON.parse(localStorage.getItem('sdata'))
+    console.log(s2)
+
+
+
+
+
+
+
+
+</script>

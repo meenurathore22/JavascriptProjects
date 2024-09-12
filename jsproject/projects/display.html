@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        
+        button{
+            padding: 5px;
+            font-size: 20px;
+            box-shadow: 0px 0px 10px 5px rgb(91, 48, 55);
+           margin: 20px 10px 0px 0px ;
+
+        }
+        nav{
+            width: 400px;
+            margin-left: 500px;
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="./data.html">
+                <button>Save Data</button>
+            </a>
+            <a href="./display.html">
+                <button onclick="displayData()">Show Data</button>
+            </a>
+        </nav>
+    </header>
+    <div>
+        <h1>stored data</h1>
+        <div id="container">
+
+        </div>
+    </div>
+</body>
+</html>
+<script>
+ function displayData()
+ {
+    const savedata = JSON.parse(localStorage.getItem('savedata'))
+
+    let container = document.getElementById('container')
+     
+    if(savedata.length>0){
+    savedata.forEach(function(data){
+
+        let smallDiv = document.createElement('div')
+
+        let name=document.createElement('p')
+        name.textContent="Name : " + data.Name
+
+        let age=document.createElement('p')
+        age.textContent="Age : " + data.Age
+
+        let email=document.createElement('p')
+        email.textContent = "email : " + data.Email
+
+        let image = document.createElement('img')
+        image.src = data.Img
+
+        let hr = document.createElement('hr')
+
+        smallDiv.append(name,age,email,image,hr)
+        container.appendChild(smallDiv)
+
+    });
+ }
+ else{
+
+   // alert("data is not found")
+    container.innerHTML="<p>data is not found</p>"
+
+ }
+}
+displayData();
+
+
+
+</script>

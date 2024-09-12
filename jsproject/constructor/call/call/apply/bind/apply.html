@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    const object1={
+        Name:'minakshi',
+        Age:20,
+        Address:'pithampur',
+        Contact:987654321,
+        Rollno:321,
+        Hobbies:['dancing','painting'],
+        Details : function(country,city){
+            return this.Name+"  "+this.Age+" "+country+" "+city
+        },
+        foodDetails :function(fruitName,price,color){
+            return this.Name+" "+fruitName+" "+price+" "+color
+        }
+
+    }
+    
+const object2={
+    Name:'Darpan',
+    Age:19,
+    Address:'Getabhawan',
+    Contact:987654321,
+    Rollno:123,
+    Hobbies:['coding','gaming']
+}
+
+console.log(object1.Details.apply(object2,['India','Pithampur']))
+</script>

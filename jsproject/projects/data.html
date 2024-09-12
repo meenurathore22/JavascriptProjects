@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+        text-align: center;
+            width: 350px;
+            height: 500px;
+            margin: 50px 0px 0px 500px;
+            
+        }
+        button{
+            padding: 5px;
+            font-size: 20px;
+            box-shadow: 0px 0px 10px 5px rgb(91, 48, 55);
+            margin: 0px 20px 50px 0px;
+        }
+        div{
+            border: 1px solid;
+            box-shadow: -4px -4px 10px rgb(28, 25, 31);
+            
+        }
+        h1:hover{
+          text-shadow: 2px 2px 5px ;
+          font-size: 40px;
+        }
+        label{
+            font-size: 20px;
+        }
+        input{
+            font-size: 20px;
+        }
+        input:hover{
+            box-shadow: 0px 0px 5px 3px rgb(81, 189, 238);
+        }
+        label:hover{
+            text-shadow: 2px 2px 5px rgb(231, 25, 25);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="./data.html">
+                <button>Save Data</button>
+            </a>
+            <a href="./display.html">
+                <button>Show Data</button>
+            </a>
+        </nav>
+    </header>
+    <div>
+    <h1>Data</h1>
+   <form>
+<label>Enter Name : </label>
+<input type="text" placeholder="name" id="name">
+<br><br>
+
+<label>Enter Age : </label>
+<input type="number" placeholder="age" id="age">
+<br><br>
+
+<label>Enter Email : </label>
+<input type="text" placeholder="email" id="email">
+<br><br>
+
+<label>Enter Image : </label>
+<input type="url" placeholder="url" id="img">
+<br><br>
+
+<button type="button" onclick="savedata()">save</button>
+
+   </form>
+</div>
+</body>
+</html>
+<script>
+
+
+   function savedata(){
+
+        let name = document.getElementById('name').value
+        //console.log(name)
+
+        let age = document.getElementById('age').value
+
+        let email = document.getElementById('email').value
+
+        let img = document.getElementById('img').value
+
+       const object = {
+            Name : name,
+            Age : age,
+            Email : email,
+            Img : img 
+        }
+       // console.log(object)
+
+    //firstly push object data in blank array then save this data into localstorage using localstorage.setitem with JSON.stringfy then create a variable and get our data and then apply condition in array varible [either(index is empty then put data in localstorage) || (index is not empty then data get using JSON.parse method) ]
+       let parse = localStorage.getItem('savedata')
+       const array=JSON.parse(parse)||[]
+        array.push(object)
+        console.log(array)
+        localStorage.setItem('savedata',JSON.stringify(array))
+        
+        alert("Data is saved");
+        document.querySelector('form').reset()
+       // localStorage.clear()
+    
+}
+    
+</script>

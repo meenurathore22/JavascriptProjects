@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+
+    function person1(){
+        return new Promise ((resolve,reject)=>{
+            setTimeout(()=>{
+                const object1 ={
+                    Name:'Minakshi',
+                    Age:20,
+                    Address:'Indore'
+                }
+                resolve(object1)
+                //reject('Error in object1')
+            },1000)
+        })
+    }
+    
+    
+    function person2(){
+        return new Promise ((resolve,reject)=>{
+            setTimeout(()=>{
+                const object2 ={
+                    Name:'Mrinali',
+                    Age:20,
+                    Address:'Pithampur'
+                }
+                resolve(object2)
+                //reject('Error in object2')
+            },1000)
+        })
+    }
+    
+    function person3(){
+        return new Promise ((resolve,reject)=>{
+            setTimeout(()=>{
+                const object3 ={
+                    Name:'Srishti',
+                    Age:21,
+                    Address:'Shanti Nagar'
+                }
+                //resolve(object3)
+               reject('Error in object3')
+            },1000)
+        })
+    }
+
+
+    async function Details(){
+        try{
+            const obj1 = await person1()
+            console.log('Details of person1',obj1)
+
+            const obj2 = await person2()
+            console.log('Details of person2',obj2)
+
+            const obj3 = await person3()
+            console.log('Details of person3',obj3)
+}
+catch(err){
+            console.log('Find : ', err)
+
+    }
+}
+Details()
+
+</script>

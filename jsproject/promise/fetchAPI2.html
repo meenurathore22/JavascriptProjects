@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>post</h1>
+    <button onclick="getData()">Posts</button>
+    <div id="mainDiv"></div>
+</body>
+</html>
+<script>
+    async function getData(){
+        let resolve= await fetch('https://jsonplaceholder.typicode.com/posts')
+        //console.log(resolve)
+
+        let data= await resolve.json()
+        console.log(data)
+
+        display(data)
+    } 
+
+    function display(data){
+    let maindiv = document.getElementById('mainDiv')
+    maindiv.innerHTML=" ";
+
+    data.forEach((event)=>{
+        let smalldiv = document.createElement('div')
+        smalldiv.setAttribute('class','container')
+
+        let userId = document.createElement('p')
+        userId.innerText=`USERID : ${event.userId}`
+
+        let Id = document.createElement('p')
+        Id.innerText=`ID : ${event.Id}`
+
+        let title = document.createElement('p')
+        title.innerText=`TITLE : ${event.title}`
+
+        let body = document.createElement('p')
+        body.innerText=`BODY : ${event.body}`
+
+        let hr = document.createElement('hr')
+
+        smalldiv.append(userId,Id,title,body,hr)
+        maindiv.appendChild(smalldiv)
+
+
+
+
+
+    })
+}
+
+</script>

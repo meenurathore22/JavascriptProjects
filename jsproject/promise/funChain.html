@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    /*function myfun(){
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                const cheese='🧀'
+               resolve(cheese)
+                //reject( cheese + 'is not available')
+            },2000)
+        })
+    }
+
+
+    function myfun1(){
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                const pizza='🍕'
+                resolve(pizza)
+                //reject(pizza + 'is not available')
+            },4000)
+        })
+    }
+
+
+    function myfun2(){
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                const fruit='🍉'
+                resolve(fruit)
+               // reject(fruit + 'is not in shop')
+            },4000)
+        })
+    }
+
+// Chain function
+
+    myfun()
+    .then((el)=>{
+        console.log(el)
+        return myfun2()
+    })
+    .then((el)=>{
+        console.log(el)
+        return myfun1()
+    })
+    .then((el)=>{
+        console.log(el)
+    })
+    .catch((err)=>{
+        console.log('error occupied',err)
+    })
+    .finally(()=>{
+        console.log('Process END')
+    })*/
+
+
+
+
+
+function person1(){
+    return new Promise ((resolve,reject)=>{
+        setTimeout(()=>{
+            const object1 ={
+                Name:'Minakshi',
+                Age:20,
+                Address:'Indore'
+            }
+            resolve(object1)
+            //reject('Error in object1')
+        },1000)
+    })
+}
+
+
+function person2(){
+    return new Promise ((resolve,reject)=>{
+        setTimeout(()=>{
+            const object2 ={
+                Name:'Mrinali',
+                Age:20,
+                Address:'Pithampur'
+            }
+            //resolve(object2)
+            reject('Error in object2')
+        },1000)
+    })
+}
+
+function person3(){
+    return new Promise ((resolve,reject)=>{
+        setTimeout(()=>{
+            const object3 ={
+                Name:'Srishti',
+                Age:21,
+                Address:'Shanti Nagar'
+            }
+            resolve(object3)
+           // reject('Error in object3')
+        },1000)
+    })
+}
+
+
+person3()
+.then((el)=>{
+    console.log('Resolve Data',el)
+    return person1()
+})
+
+.then((el)=>{
+    console.log('Resolve Data',el)
+    return person2()
+})
+
+.then((el)=>{
+    console.log('Resolve Data',el)
+})
+
+.catch((err)=>{
+    console.log('Find :',err)
+})
+
+.finally(()=>{
+    console.log('Process End')
+})
+
+
+
+function name1(){
+    return((resolve,reject)=>{
+        setTimeout(()=>{
+            const hello='👋'
+            resolve(hello,"I am here")
+           // reject('')
+        },1000)
+    })
+}
+
+function name2(){
+    return((resolve,reject)=>{
+        setTimeout(()=>{
+            const anger='😠'
+            resolve(anger," No No I am here")
+           // reject('')
+        },1000)
+    })
+}
+
+function name3(){
+    return((resolve,reject)=>{
+        setTimeout(()=>{
+            const sad='😟'
+            //resolve(hello,"I am here")
+           reject('Okay fine you ignore me',sad)
+        },1000)
+    })
+}
+
+
+name1()
+.then((el)=>{
+    console.log(el)
+    return name2()
+})
+
+.then((el)=>{
+    console.log(el)
+    return name1()
+})
+
+.then((el)=>{
+    console.log(el)
+})
+
+.catch((err)=>{
+console.log('Something Wrong',err)
+})
+
+.finally(()=>{
+    console.log('End Process')
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

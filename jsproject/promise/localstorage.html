@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+</body>
+</html>
+<script>
+
+    const name = 'minakshi'
+    const age = 20
+    localStorage.setItem('name',name)
+    localStorage.setItem('age',age)
+    localStorage.getItem('name')
+
+    const obj = {
+        name:'minakshi',
+        age : 20
+    }
+
+   localStorage.setItem('objKey',JSON.stringify(obj))
+  const parse= JSON.parse(localStorage.getItem('objKey'))
+  console.log(parse)
+    
+
+    
+    
+</script>

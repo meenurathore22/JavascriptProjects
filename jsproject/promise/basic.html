@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    const mypromise = new Promise((resolve,reject)=>{
+
+setTimeout(()=>{
+    let booking = false
+    if(booking){
+        resolve('booking successfully')
+    }
+    else{
+        reject('reject booking')
+    }
+},2000)
+
+    })
+    mypromise
+    .then((done)=>{
+        console.log(done)
+    })
+    .catch((notdone)=>{
+        console.log(notdone)
+    })
+
+
+
+
+    const promise = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            apple=true
+            if(apple){
+                console.log('yes')
+            }
+            else{
+                console.log('No')
+            }
+        },2000)
+    })
+    promise
+    .then((y)=>{
+        console.log('ydone')
+    })
+    .catch((n)=>{
+        console.log('ndone')
+    })
+
+
+
+
+    
+</script>

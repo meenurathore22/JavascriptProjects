@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    function myfun(){
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                const cheese='🧀'
+               // resolve(cheese)
+                reject( cheese + 'is not available')
+            },2000)
+        })
+    }
+    myfun()
+    .then((el)=>{
+        console.log(el)
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+
+
+
+    function myfun1(){
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                const pizza='🍕'
+                resolve(pizza)
+                //reject(pizza + 'is not available')
+            },4000)
+        })
+    }
+    myfun1()
+    .then((el)=>{
+        console.log(el)
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+
+    function myfun2(){
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                const fruit='🍉'
+               // resolve(fruit)
+                reject(fruit + 'is not in shop')
+            },3000)
+        })
+    }
+    myfun2()
+    .then((el)=>{
+        console.log(el)
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+</script>

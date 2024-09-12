@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .main{
+        background-color: rgb(150, 208, 231);
+        width: 1500px;
+        height: 1000px;
+    }
+    h1{
+       text-align: center;
+    }
+    input{
+        padding: 2px 167px 2px 2px;
+        font-size: 20px;
+        margin-right: 40px;
+        margin-bottom: 10px;
+    }
+    .box1{
+        margin-left: 50px;
+        
+    }
+    select{
+        width: 20px;
+        margin-right: 50px;
+    }
+    label{
+        font-size: 20px;
+    }
+   
+   
+</style>
+</head>
+<body>
+    <div class="main">
+    <h1>Student Registration Form</h1>
+    <form>
+   <div class="box1">
+    <h2>Student Information</h2> 
+    <input type="text" placeholder="First Name" id="fname">
+    <input type="text" placeholder="Middle Name" id="mname">
+    <input type="text" placeholder="Last name" id="lname">
+    <input type="text" placeholder="Date of Birth" style="padding-right: 400px;" id="birth">
+    <input type="number" placeholder="Student Id" style="padding-right: 400px;" id="ID">
+ 
+    <h2>Address</h2> 
+    <input type="text" placeholder="Street Address" style="padding-right: 1100px;" id="address">
+    <input type="text" placeholder="City" style="padding-right: 400px;" id="city">
+    <input type="text" placeholder="State" style="padding-right: 400px;" id="state">
+    <input type="text" placeholder="Country" style="padding-right: 400px;" id="country">
+    <input type="number" placeholder="ZIP Code" style="padding-right: 400px;" id="code">
+
+    <h2>Contact Information</h2>
+    <input type="text" placeholder="E-mail" style="padding-right: 400px;" id="mail">
+    <input type="number" placeholder="contact" style="padding-right: 400px;" id="contact">
+
+    <h2>Courses*</h2>
+    
+    <label>Course</label>
+    <select id="select">
+        <option value="c">c</option>
+        <option value="c++">c++</option>
+        <option value="Html">Html</option>
+        <option value="Css">Css</option>
+        <option value="Jss">Javascript</option>
+    </select>
+    <input type="number" placeholder="Start Date"><br><br>
+    <input type="submit" style="padding: 5px;">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</form>
+   
+</div>
+   
+</body>
+</html>
+<script src="./registration.js"></script>
